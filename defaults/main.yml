@@ -2,6 +2,7 @@
 apache_mirror: http://apache.mirrors.tds.net
 kafka_hosts: "{{ansible_fqdn}}:9092"
 kafka_version: 0.8.1.1
+scala_version: 2.9.2
 run_mode: Deploy
 skip_install: False
 
@@ -20,7 +21,7 @@ kafka_log_segment_bytes: "{{kafka_log_retention_bytes}}"
 kafka_log_cleanup_interval_mins: 1
 kafka_heap_opts: "-Xmx1G -Xms1G"
 kafka_tarball_location: /root
-kafka_tarball_name: "kafka_2.9.2-{{kafka_version}}.tgz"
+kafka_tarball_name: "kafka_{{scala_version}}-{{kafka_version}}.tgz"
 monasca_wait_for_period: 30
 monasca_log_level: WARN
 zookeeper_connection_timeout_ms: 1000000
